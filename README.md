@@ -8,14 +8,17 @@ Speech/Interaction
 - text -> speech (it talking to me)
 - understanding language (probably some sort of LLM api)
 - memory
+  
 Knowledge and reasoning
 - general knowledge
 - math/logic
 - planning/scheduling
+  
 System Control
 - run pc programs
 - manage files
 - control OS
+  
 Web/API access
 - search the web
 - use api data
