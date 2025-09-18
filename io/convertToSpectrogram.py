@@ -28,7 +28,7 @@ def wav_to_spectrogram(data, sample_rate):
 #     # print(save_path)
 
 #change folder name based on the word you are training
-def process_folder(folder_path: str, label: str, save_dir= "spectrograms/cat"):
+def process_folder(folder_path: str, label: str, save_dir= "spectrograms/zero"):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     for wav_file in os.listdir(folder_path):
@@ -42,16 +42,18 @@ def process_folder(folder_path: str, label: str, save_dir= "spectrograms/cat"):
         
         Sxx = wav_to_spectrogram(data, sample_rate)
 
+        char_label = list(label.lower())
+
         #save with label
         timestamp = int(time.time() * 1000)
-        save_path = os.path.join(save_dir, f"{label}_{timestamp}.npy")
-        np.save(save_path, Sxx)
+        save_path = os.path.join(save_dir, f"{label}_{timestamp}.npz")
+        np.savez_compressed(save_path, spectrogram=Sxx, label=char_label)
 
 
 
 
 #change based on the word
-folder_path = "C:/Users/Brian Bowen/Narvis/io/speech_commands_v0.02/cat"
-label = "cat"
+folder_path = "C:/Users/Brian Bowen/Narvis/io/speech_commands_v0.02/zero"
+label = "zero"
 process_folder(folder_path,label)
 print("done")
