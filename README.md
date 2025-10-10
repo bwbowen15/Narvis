@@ -1,5 +1,6 @@
 Hi everyone. 
-I am working on my own personal AI assistant named Narvis(Not Jarvis ;). 
+I am working on my own personal AI assistant named Narvis(Not Jarvis ;).
+This is done in free time so updates may be rare.
 Heres the plan
 
 
